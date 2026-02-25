@@ -1,0 +1,43 @@
+# IDE Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backend (Spring Boot)
+**/target/
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/*.log
+.mvn/
+mvnw
+mvnw.cmd
+
+# Frontend (React/Vite)
+**/node_modules/
+**/dist/
+**/dist-ssr/
+*.local
+.eslintcache
+
+# Python (ML Model)
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/.venv/
+**/env/
+**/venv/
+**/ENV/
+**/.env
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Git
+.git/
+**/ .git/
+!/.gitignore

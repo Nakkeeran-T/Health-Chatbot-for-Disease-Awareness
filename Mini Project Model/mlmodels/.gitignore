@@ -1,0 +1,8 @@
+# Data and Models
+data/
+models/*.pkl
+plots/*.png
+__pycache__/
+
+# Dependencies
+requirements.txt.user
