@@ -1,0 +1,154 @@
+/* ─── Surveillance Page ───────────────────────────────────────────────────── */
+
+.monitored-banner {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 0.9rem 1.2rem; margin-bottom: 1.5rem;
+}
+.mb-label { color: #888; font-size: 0.85rem; white-space: nowrap; }
+.mb-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.mb-chip {
+  font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.7rem;
+  border-radius: 20px; border: 1px solid;
+}
+
+/* ─── District Selector ──────────────────────────────────────────────────── */
+.district-selector-wrap {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem;
+}
+.ds-label { color: #888; font-size: 0.88rem; font-weight: 600; margin-bottom: 1rem; }
+
+.district-grid {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.district-btn {
+  padding: 0.42rem 0.85rem; border-radius: 20px; font-size: 0.8rem;
+  font-weight: 500; cursor: pointer; border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05); color: #aaa; transition: all 0.2s;
+}
+.district-btn:hover {
+  background: rgba(108,99,255,0.15); border-color: #6c63ff; color: #c0bbff;
+}
+.district-btn-active {
+  background: rgba(108,99,255,0.25); border-color: #6c63ff;
+  color: #c0bbff; box-shadow: 0 0 10px rgba(108,99,255,0.3);
+}
+
+/* ─── Error ──────────────────────────────────────────────────────────────── */
+.surv-error {
+  background: rgba(255,71,87,0.1); border: 1px solid rgba(255,71,87,0.3);
+  border-radius: 12px; padding: 1rem 1.2rem; color: #ff4757;
+  margin-bottom: 1.5rem; font-size: 0.9rem;
+}
+
+/* ─── Surveillance Panel ─────────────────────────────────────────────────── */
+.surv-panel {
+  display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;
+  animation: fadeIn 0.35s ease;
+}
+
+.surv-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 1.2rem 1.5rem;
+}
+.surv-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin: 0 0 0.3rem; }
+.surv-source { color: #555; font-size: 0.78rem; margin: 0; }
+.surv-alerts-badge {
+  padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.85rem;
+  font-weight: 600; white-space: nowrap;
+}
+
+/* ─── Bar Chart ──────────────────────────────────────────────────────────── */
+.surv-chart-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 1.5rem;
+}
+.surv-chart-title {
+  font-weight: 600; color: #ccc; margin-bottom: 1.2rem; font-size: 0.95rem;
+}
+.surv-bars { display: flex; flex-direction: column; gap: 0.85rem; }
+.surv-bar-row { display: flex; align-items: center; gap: 0.8rem; }
+.surv-bar-label {
+  width: 180px; font-size: 0.82rem; color: #aaa;
+  flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.surv-bar-track {
+  flex: 1; height: 14px; background: rgba(255,255,255,0.06);
+  border-radius: 7px; overflow: hidden;
+}
+.surv-bar-fill {
+  height: 100%; border-radius: 7px;
+  transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.surv-bar-count {
+  width: 60px; text-align: right; font-size: 0.85rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: flex-end; gap: 0.4rem;
+}
+.surv-spike-tag {
+  font-size: 0.7rem; background: rgba(255,140,0,0.15); color: #ff8c00;
+  padding: 0.1rem 0.4rem; border-radius: 4px; white-space: nowrap;
+}
+
+/* ─── Thresholds ─────────────────────────────────────────────────────────── */
+.surv-thresholds {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 1.2rem 1.5rem;
+}
+.surv-thresh-title {
+  font-weight: 600; color: #ccc; margin-bottom: 1rem; font-size: 0.9rem;
+}
+.surv-thresh-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+.thresh-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 0.8rem; text-align: center;
+}
+.thresh-name { font-size: 0.82rem; font-weight: 600; color: #ccc; margin-bottom: 0.5rem; }
+.thresh-vals { display: flex; justify-content: space-around; font-size: 1rem; font-weight: 700; }
+.thresh-labels { display: flex; justify-content: space-around; font-size: 0.7rem; margin-top: 0.2rem; }
+
+/* ─── Note ───────────────────────────────────────────────────────────────── */
+.surv-note {
+  background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2);
+  border-radius: 10px; padding: 0.8rem 1rem; color: #a89cff;
+  font-size: 0.82rem; line-height: 1.5;
+}
+
+/* ─── Info Section ───────────────────────────────────────────────────────── */
+.surv-info-section {
+  margin-top: 2rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.surv-info-section h3 {
+  color: #ccc; font-size: 1rem; font-weight: 600; margin-bottom: 1.2rem;
+}
+.surv-info-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.surv-info-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 1.2rem; text-align: center;
+  transition: transform 0.2s;
+}
+.surv-info-card:hover { transform: translateY(-3px); }
+.sic-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+.surv-info-card h4 { font-size: 0.9rem; font-weight: 600; color: #ccc; margin: 0 0 0.5rem; }
+.surv-info-card p { font-size: 0.8rem; color: #666; line-height: 1.5; margin: 0; }
+
+/* ─── Empty State ────────────────────────────────────────────────────────── */
+.empty-state { text-align: center; padding: 3rem 1rem; }
+.empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+.empty-state h3 { color: #ccc; margin-bottom: 0.5rem; }
+.empty-state p { color: #666; font-size: 0.88rem; }
+
+/* Loading */
+.loading-state { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; color: #888; padding: 2rem; }
+.spinner { border: 3px solid rgba(108,99,255,0.2); border-top-color: #6c63ff; border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

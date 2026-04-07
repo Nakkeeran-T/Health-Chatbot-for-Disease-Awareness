@@ -1,0 +1,27 @@
+# Server
+server.port=8080
+
+### Database Configuration (PostgreSQL)
+spring.datasource.url=jdbc:postgresql://localhost:5432/diseasedatabase
+spring.datasource.username=postgres
+spring.datasource.password=${DB_PASSWORD:your_password}
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA / Hibernate
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# JWT
+app.jwt.secret=${JWT_SECRET:your_jwt_secret}
+app.jwt.expiration=86400000
+
+# Twilio Configuration
+twilio.account.sid=${TWILIO_ACCOUNT_SID:YOUR_ACCOUNT_SID}
+twilio.auth.token=${TWILIO_AUTH_TOKEN:YOUR_AUTH_TOKEN}
+twilio.phone.number=${TWILIO_PHONE_NUMBER:+1234567890}
+twilio.whatsapp.number=${TWILIO_WHATSAPP_NUMBER:whatsapp:+1234567890}
+
+# ML API
+ml.api.url=http://localhost:5002
+ml.api.timeout=3000
