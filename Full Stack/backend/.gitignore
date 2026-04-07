@@ -16,3 +16,8 @@ logs/
 
 # Sensitive info (if any)
 .env
+# Environment files
+.env
+*.env
+**/.env
+**/*.env
