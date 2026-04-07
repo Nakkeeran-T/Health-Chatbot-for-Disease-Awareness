@@ -31,6 +31,10 @@ mvnw.cmd
 **/venv/
 **/ENV/
 **/.env
+**/dataset/
+**/dataset_image/
+**/*.h5
+**/*.pkl
 
 # OS files
 Thumbs.db

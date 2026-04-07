@@ -4,6 +4,11 @@ Run: python test_models.py
 """
 import os
 import sys
+
+# Ensure stdout uses UTF-8 to prevent UnicodeEncodeError with emojis on Windows
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 import unittest
 import joblib
 import pandas as pd

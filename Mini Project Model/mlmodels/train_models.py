@@ -6,6 +6,11 @@ Run: python train_models.py
 """
 import os
 import sys
+
+# Ensure stdout uses UTF-8 to prevent UnicodeEncodeError with emojis on Windows
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 import pandas as pd
 import numpy as np
 import joblib
@@ -106,14 +111,17 @@ print("\n" + "="*60)
 print("🩺 MODEL 2: Disease Symptom Predictor (Random Forest)")
 print("="*60)
 
-df_disease = pd.read_csv("data/disease_symptom_data.csv", encoding="utf-8")
-print(f"   Training samples : {len(df_disease)}")
-print(f"   Diseases         : {df_disease['disease'].nunique()}")
-print(f"   Disease list     : {sorted(df_disease['disease'].unique())}")
+df_disease = pd.read_csv("dataset/Training_processed.csv", encoding="utf-8")
+if 'Unnamed: 133' in df_disease.columns:
+    df_disease = df_disease.drop('Unnamed: 133', axis=1)
 
-symptom_cols = [c for c in df_disease.columns if c != "disease"]
+print(f"   Training samples : {len(df_disease)}")
+print(f"   Diseases         : {df_disease['prognosis'].nunique()}")
+print(f"   Disease list     : {sorted(df_disease['prognosis'].unique())}")
+
+symptom_cols = [c for c in df_disease.columns if c != "prognosis"]
 X_disease = df_disease[symptom_cols]
-y_disease = df_disease["disease"]
+y_disease = df_disease["prognosis"]
 
 Xd_tr, Xd_te, yd_tr, yd_te = train_test_split(
     X_disease, y_disease, test_size=0.20, random_state=42, stratify=y_disease
